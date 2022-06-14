@@ -1,4 +1,5 @@
-from IPython.core.magic import (Magics, magics_class, line_magic, cell_magic, display, HTML)
+from IPython.core.magic import (Magics, magics_class, line_magic, cell_magic)
+from IPython.core.display import display, HTML
 
 @magics_class
 class Abracadabra(Magics):
