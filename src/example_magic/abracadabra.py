@@ -23,6 +23,24 @@ class Abracadabra(Magics):
         return IFrame(src='https://raw.githubusercontent.com/Llewi/AnIPythonExtension/main/src/example_magic/index.html', width=700, height=600)
 
     @line_magic
+    def all_in_one_line(self, line):
+        return display(HTML(
+            """
+            <head>
+    <title>the good stuff</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="like_button.js"></script>
+</head>
+
+<body>
+    <h1>Hello, world.</h1>
+    <div id="like_button_container"></div>
+</body>
+            """
+        ))
+
+    @line_magic
     def it_is_html(self, line):
         return display(HTML('<h1>Hello, world!</h1>'))
 
