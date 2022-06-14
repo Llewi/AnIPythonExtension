@@ -1,5 +1,5 @@
 from IPython.core.magic import (Magics, magics_class, line_magic, cell_magic)
-from IPython.core.display import display, HTML
+from IPython.core.display import display, HTML, IFrame
 
 @magics_class
 class Abracadabra(Magics):
@@ -7,6 +7,11 @@ class Abracadabra(Magics):
     @line_magic
     def youre_a_magic_harry(self, line):
         return ":D"
+
+    @line_magic
+    def an_iframe(self, line):
+        iframe = IFrame(src='https://s3.amazonaws.com/duhaime/blog/visualizations/isolation-forests.html', width=700, height=600)
+        return iframe
 
     @line_magic
     def it_is_html(self, line):
@@ -20,5 +25,5 @@ class Abracadabra(Magics):
     def cadabra(self, line, cell):
         return line, cell
 
-    def vanilla_method():
+    def vanilla_method(self):
         return "literally no flavour"
