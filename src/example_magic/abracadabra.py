@@ -1,5 +1,6 @@
 from IPython.core.magic import (Magics, magics_class, line_magic, cell_magic)
-from IPython.core.display import display, HTML, IFrame
+from IPython.core.display import display, HTML
+from IPython.display import IFrame
 
 @magics_class
 class Abracadabra(Magics):
