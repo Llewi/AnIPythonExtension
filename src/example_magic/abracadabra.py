@@ -26,11 +26,41 @@ class Abracadabra(Magics):
     def all_in_one_line(self, line):
         return display(HTML(
             """
-            <head>
+<head>
     <title>the good stuff</title>
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <script src="like_button.js"></script>
+    <script>
+        'use strict';
+
+        console.log('anything?');
+
+        const e = React.createElement;
+
+        class LikeButton extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = { liked: false };
+            }
+
+            render() {
+                if (this.state.liked) {
+                    return 'You liked this.';
+                }
+
+                return e(
+                    'button',
+                    { onClick: () => this.setState({ liked: true }) },
+                    'Like'
+                );
+            }
+        }
+
+        const domContainer = document.querySelector('#like_button_container');
+        const root = ReactDOM.createRoot(domContainer);
+        root.render(e(LikeButton));
+
+    </script>
 </head>
 
 <body>
