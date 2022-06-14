@@ -15,6 +15,5 @@ class Abracadabra(Magics):
         return "literally no flavour"
 
     @line_magic
-    def it_is_html():
+    def it_is_html(self, line):
         return display(HTML('<h1>Hello, world!</h1>'))
-        
