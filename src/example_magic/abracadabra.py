@@ -15,6 +15,10 @@ class Abracadabra(Magics):
         return iframe
 
     @line_magic
+    def my_iframe(self, line):
+        return IFrame(src='./index.html', width=700, height=600)
+
+    @line_magic
     def it_is_html(self, line):
         return display(HTML('<h1>Hello, world!</h1>'))
 
