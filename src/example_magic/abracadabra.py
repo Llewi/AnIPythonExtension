@@ -19,6 +19,10 @@ class Abracadabra(Magics):
         return IFrame(src='./index.html', width=700, height=600)
 
     @line_magic
+    def my_iframe_except_its_actually_external(self, line):
+        return IFrame(src='https://raw.githubusercontent.com/Llewi/AnIPythonExtension/main/src/example_magic/index.html', width=700, height=600)
+
+    @line_magic
     def it_is_html(self, line):
         return display(HTML('<h1>Hello, world!</h1>'))
 
